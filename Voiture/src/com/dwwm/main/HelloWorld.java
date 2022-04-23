@@ -9,11 +9,13 @@ public class HelloWorld {
 	
 	public static void main(String[] args) {
 		
-		Voiture voitureDeMichel = new Voiture();/* instancier une voiture (new voiture)
+		Voiture voitureDeMichel = new Voiture("Jaune", 3);/* instancier une voiture (new voiture)
 		new voiture va creer une objet dans la mémoire, cette objet aura des propriétés qui auront des valeurs par defaut*/
-		voitureDeMichel.nbPortes=3;
+//		voitureDeMichel.nbPortes=3;
 		voitureDeMichel.automatique=true;
-		voitureDeMichel.couleur="Vert";
+//		voitureDeMichel.couleur="Vert";
+		
+		System.out.println("Voiture de Michel "+voitureDeMichel.couleur);
 		
 		//==========================================Modifier atributs objet====================================//
 		
@@ -65,8 +67,8 @@ public class HelloWorld {
 		
 		//==========================Attribut sous forme objet============================//
 		
-		Voiture voitureDeJerome = new Voiture();
-		voitureDeJerome.nbPortes = 5;
+		Voiture voitureDeJerome = new Voiture(5);
+//		voitureDeJerome.nbPortes = 5;
 		Moteur moteur = new Moteur();
 		moteur.carburation="Diesel";
 		moteur.nbCylindres=6;
@@ -86,6 +88,17 @@ public class HelloWorld {
 		Ville destination = voitureDeMichel.transporter(passager, auckland);
 		System.out.println("Le passager est arrivé dans la ville de "+destination.nom);
 		
+		//======================================Attribut static=======================================//
+		System.out.println("Le nombre de roues de la voiture de Michel est "+voitureDeMichel.nbRoues);
+		System.out.println("Le nombre de roues de la voiture de Jerome est "+voitureDeJerome.nbRoues);
+		System.out.println("Le nombre de roues d'une voiture en général est "+Voiture.nbRoues);
+		
+		System.out.println("Le nombre de roues de la voiture de Michel est "+voitureDeMichel.nbRoues);
+		System.out.println("Le nombre de roues de la voiture de Jerome est "+voitureDeJerome.nbRoues);
+		System.out.println("Le nombre de roues d'une voiture en général est "+Voiture.nbRoues);
+		
+		Voiture.klaxonner();
+		Voiture.tourner(true, 45);
 	}//EOF
 
 }//EOC

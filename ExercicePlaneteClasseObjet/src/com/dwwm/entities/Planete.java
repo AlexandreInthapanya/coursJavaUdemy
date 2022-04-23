@@ -12,6 +12,27 @@ public class Planete {
 	
 	public Vaisseau vaisseauActuellementAcoste;
 	
+	public static String forme="Sphérique";
+	
+	public static int nbPlanetesDecouvertes;
+	
+	//==============================Constructeur====================================//
+	
+	public Planete(String nom) {
+		this.nom = nom;
+		nbPlanetesDecouvertes++;
+	}
+	
+	//============================Methodes Static====================================//
+	
+	public static String expansion(double distance) {
+		if (distance < 14) {
+			return "Oh là là mais c'est super rapide";
+		} else {
+			return "Je rête ou c'est plus rapide que la lumiere";
+		}
+	}
+	
 	
 	
 //	public void revolution() {
